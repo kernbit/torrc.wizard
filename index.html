@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>torrc.wizard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="header-arrow">./</span>
+            <span class="header-domain">torrc.wizard</span>
+            <span class="header-arrow">>></span>
+            <span class="header-title"> config</span>
+        </div>
+
+        <div class="block">
+            <div class="section-title">Torrc Config Builder</div>
+            <div>Kendine göre seçim yap, sonundaki dosyayı kopyala.</div>
+        </div>
+
+        <form id="torrcForm" autocomplete="off">
+            <div class="block">
+                <span class="section-title">Portlar & Protokoller</span>
+                <label for="socksPort">SOCKS Port</label>
+                <input type="number" id="socksPort" min="1" max="65535" value="9050">
+                <label for="protocols" style="margin-top:6px;display:block;">Protokoller</label>
+                <select id="protocols" multiple>
+                    <option value="ORPort">ORPort</option>
+                    <option value="DirPort">DirPort</option>
+                    <option value="ControlPort">ControlPort</option>
+                </select>
+            </div>
+            <div class="block">
+                <span class="section-title">Ülkeler & Düğümler</span>
+                <label for="country">Çıkış Ülkesi (ExitNodes)</label>
+                <select id="country" multiple>
+                    <option value="{us}">ABD</option>
+                    <option value="{tr}">Türkiye</option>
+                    <option value="{de}">Almanya</option>
+                    <option value="{ru}">Rusya</option>
+                    <option value="{fr}">Fransa</option>
+                    <option value="{gb}">İngiltere</option>
+                    <option value="{nl}">Hollanda</option>
+                    <option value="{ch}">İsviçre</option>
+                    <option value="{se}">İsveç</option>
+                </select>
+                <label for="entryNode" style="margin-top:6px;display:block;">EntryNodes</label>
+                <input type="text" id="entryNode" placeholder="Fingerprint veya {country}">
+                <label for="excludeNodes" style="margin-top:6px;display:block;">ExcludeNodes</label>
+                <input type="text" id="excludeNodes" placeholder="{ir},{cn},{sy}">
+            </div>
+            <div class="block">
+                <span class="section-title">Bridge</span>
+                <label for="bridgeType">Bridge Türü</label>
+                <select id="bridgeType">
+                    <option value="">Yok</option>
+                    <option value="obfs4">obfs4</option>
+                    <option value="meek">meek</option>
+                    <option value="snowflake">snowflake</option>
+                    <option value="custom">Özel</option>
+                </select>
+                <div id="customBridgeBlock" style="display:none;">
+                    <label for="customBridges" style="margin-top:6px;">Bridge Satırları</label>
+                    <textarea id="customBridges" rows="4" placeholder="Bridge obfs4 ..."></textarea>
+                </div>
+            </div>
+            <div class="block">
+                <span class="section-title">Diğer</span>
+                <label>Otomatik Başlat</label>
+                <input type="checkbox" id="runAsDaemon" checked>
+                <label for="runAsDaemon" class="inline">RunAsDaemon 1</label>
+            </div>
+            <button type="button" id="generateBtn">Oluştur</button>
+        </form>
+
+        <div class="torrc-box">
+            <div style="color:#aaff55;font-weight:bold;font-size:1.08em;margin-bottom:8px;">torrc:</div>
+            <textarea id="torrcOutput" rows="15" readonly style="width:100%;background:#131619;color:#98e2e8;border:none;resize:vertical;margin-bottom:10px;"></textarea>
+            <button id="copyBtn">Kopyala</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

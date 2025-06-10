@@ -1,0 +1,132 @@
+body {
+    background: #131416;
+    color: #e0e0e0;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #67d2ff;
+    text-decoration: underline;
+    transition: color 0.18s;
+}
+a:hover {
+    color: #7fffaf;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 760px;
+    margin: 48px auto 0 auto;
+    background: transparent;
+    border-radius: 10px;
+    padding: 0 20px 50px 20px;
+}
+
+.header {
+    margin-bottom: 32px;
+    border-bottom: 1px dotted #7fffd4;
+    padding-bottom: 8px;
+}
+
+.header-title {
+    color: #7fffd4;
+    font-size: 1.7em;
+    font-family: inherit;
+    font-weight: 600;
+    display: inline;
+}
+
+.header-domain {
+    color: #67b7ff;
+    font-weight: 700;
+    font-size: 1.7em;
+    font-family: inherit;
+    display: inline;
+}
+
+.header-arrow {
+    color: #aaff55;
+    font-weight: 700;
+    font-size: 1.7em;
+    font-family: inherit;
+    display: inline;
+}
+
+.section-title {
+    color: #ccff44;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 2.2em;
+    margin-bottom: 0.8em;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 2px #262c1d;
+}
+
+.block {
+    margin-bottom: 24px;
+}
+
+textarea, input[type="text"], input[type="number"], select {
+    background: #191a1f;
+    color: #e0e0e0;
+    border: 1px solid #3d3d3d;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: 1px solid #4dff7f;
+    background: #232530;
+}
+
+button {
+    background: #232530;
+    color: #aaff55;
+    border: 1px solid #aaff55;
+    border-radius: 4px;
+    padding: 10px 32px;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.15s, color 0.15s, border 0.15s;
+}
+button:hover {
+    background: #1C201a;
+    color: #7fffd4;
+    border-color: #7fffd4;
+}
+
+small {
+    color: #44e6ff;
+    opacity: 0.7;
+    font-size: 0.97em;
+}
+
+.torrc-box {
+    margin-top: 22px;
+    background: #181c1e;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 18px 14px 12px 14px;
+    color: #b1fdf9;
+    font-size: 1em;
+    font-family: inherit;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.10);
+}
+
+::-webkit-scrollbar {
+    background: #131314;
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #232530;
+    border-radius: 4px;
+}
